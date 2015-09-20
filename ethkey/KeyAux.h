@@ -480,14 +480,14 @@ public:
 					cout << "Key " << i << ":" << endl;
 					cout << "  UUID: " << toUUID(u) << ":" << endl;
 					cout << "  Address: " << toAddress(Secret(s)).hex() << endl;
-					cout << "  Secret: " << toHex(s.ref().cropped(0, 8)) << "..." << endl;
+					cout << "  Secret: " << toHex(s.ref() << "" << endl;
 				}
 				else if (h128 u = fromUUID(i))
 				{
 					bytesSec s = secretStore().secret(u, [&](){ return getPassword("Enter password for key " + toUUID(u) + ": "); });
 					cout << "Key " << i << ":" << endl;
 					cout << "  Address: " << toAddress(Secret(s)).hex() << endl;
-					cout << "  Secret: " << toHex(s.ref().cropped(0, 8)) << "..." << endl;
+					cout << "  Secret: " << toHex(s.ref() << "" << endl;
 				}
 				else
 					cerr << "Couldn't inspect " << i << "; not found." << endl;
